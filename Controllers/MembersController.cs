@@ -26,53 +26,51 @@ namespace WebApplication1.Controllers
             return Ok(members);
         }
 
-        //        [HttpGet("{MemberId}")]
-        //        public IActionResult GetById(int CategoryId)
-        //        {
-        //            var books = _bookCategoryRepo.GetById(CategoryId);
-        //            if (books == null)
-        //                return NotFound();
-        //            return Ok(books);
-        //        }
+        [HttpGet("{MemberId}")]
+        public IActionResult GetById(int MemberId)
+        {
+            var members = _membersRepo.GetById(MemberId);
+            if (members == null)
+                return NotFound();
+            return Ok(members);
+        }
 
-        //        [HttpPost]
-        //        public IActionResult Create(MemberResponse MemberResponse)
-        //        {
-        //            var books = new BookCategories
-        //            {
-        //                MembersName = MemberResponse.CategoryName,
+        [HttpPost]
+        public IActionResult Create(MemberResponse MemberResponse)
+        {
+            var members = new Members
+            {
+                Name = MemberResponse.Name,
 
-        //            };
-        //            _bookCategoryRepo.Add(books);
-        //            return CreatedAtAction(nameof(GetById), new { CategoryId = books.CategoryId }, books);
-        //        }
+            };
+            _membersRepo.Add(members);
+            return CreatedAtAction(nameof(GetById), new { MemberId = members.MemberId }, members);
+        }
 
-        //        [HttpPut("{CategoryId}")]
-        //        public IActionResult Update(int MemberId, MembersResponse MembersResponse)
-        //        {
-        //            var bookCategories = _bookCategoryRepo.GetById(MemberId);
-        //            if (bookCategories == null)
-        //                return NotFound();
+        [HttpPut("{MembersId}")]
+        public IActionResult Update(int MemberId, MemberResponse MembersResponse)
+        {
+            var members = _membersRepo.GetById(MemberId);
+            if (members == null)
+                return NotFound();
 
-        //            bookCategories.MemberName = MembersResponse.MemberName;
+            members.Name = members.Name;
 
-        //            _bookCategoryRepo.Update(bookCategories);
+            _membersRepo.Update(members);
 
-        //            return NoContent();
-        //        }
+            return NoContent();
+        }
 
-        //        [HttpDelete("{MemberId}")]
-        //        public IActionResult Delete(int MemberId)
-        //        {
-        //            var bookCategories = _bookCategoryRepo.GetById(MemberId);
-        //            if (bookCategories == null)
-        //                return NotFound();
+        [HttpDelete("{MemberId}")]
+        public IActionResult Delete(int MemberId)
+        {
+            var members = _membersRepo.GetById(MemberId);
+            if (members == null)
+                return NotFound();
 
-        //            _bookCategoryRepo.Delete(MemberId);
-        //            return NoContent();
-        //        }
-        //    }
-        //}
-        //    }
+            _membersRepo.Delete(MemberId);
+            return NoContent();
+        }
     }
 }
+            

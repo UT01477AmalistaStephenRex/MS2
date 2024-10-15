@@ -222,3 +222,4 @@ X:\MS2\LB\LB\WebApplication1\WebApplication1\obj\Debug\net8.0\scopedcss\bundle\W
 X:\MS2\LB\LB\WebApplication1\WebApplication1\obj\Debug\net8.0\WebAppli.7D14BD69.Up2Date
 X:\MS2\LB\LB\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.genruntimeconfig.cache
 X:\MS2\LB\LB\WebApplication1\WebApplication1\obj\Debug\net8.0\ref\WebApplication1.dll
+X:\MS2\LB\LB\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.sourcelink.json
