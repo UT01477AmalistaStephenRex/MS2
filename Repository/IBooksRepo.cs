@@ -1,6 +1,11 @@
-﻿namespace WebApplication1.Repository
+﻿using WebApplication1.Database;
+
+namespace WebApplication1.Repository
 {
-    public class IBooksRepo
+    public interface IBooksRepo
     {
+        IEnumerable<Books> GetAll();
+        //Books GetById(int BookId);
+        
     }
 }

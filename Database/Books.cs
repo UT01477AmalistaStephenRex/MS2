@@ -12,3 +12,4 @@
         public int AvailableCopies { get; set; }
     }
 }
+
